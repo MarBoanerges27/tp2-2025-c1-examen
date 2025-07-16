@@ -1,7 +1,6 @@
 import express from "express";
 import morgan from "morgan";
 import userRoutes from "./routes/userRoute.js";
-
 import salesRoutes from "./routes/salesRouter.js";
 import cors from "cors";
 
@@ -14,7 +13,6 @@ app.use(cors());
 
 // Rutas
 app.use("/api/users", userRoutes);
-
 app.use("/api/sales", salesRoutes);
 
 // Ruta base

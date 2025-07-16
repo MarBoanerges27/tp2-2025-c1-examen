@@ -42,4 +42,38 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 
 ## Listado de endpoint
 
--GET /api/movies?pageSize=[pageSize]&page=[page]
+#### Ventas
+
+- **GET /sales**
+  - Devuelve todas las ventas registradas.
+  - Requiere autenticación.
+
+- **GET /sales/total**
+  - Devuelve la cantidad total de ventas y el monto total.
+  - Requiere autenticación.
+
+- **GET /sales/top-products**
+  - Devuelve los productos más vendidos.
+  - Requiere autenticación.
+
+- **GET /sales/coupon-available**
+  - Devuelve solo los IDs de las ventas en las que no se utilizó cupón.
+  - Requiere autenticación.
+
+- **GET /sales/:id**
+  - Devuelve los datos de una venta específica por su ID.
+  - Requiere autenticación.
+  - Parámetros:
+    - `id`: ID de la venta.
+
+- **PUT /sales/:id/coupon-used**
+  - Actualiza el estado del cupón de una venta a `true`.
+  - Requiere autenticación.
+  - Parámetros:
+    - `id`: ID de la venta a modificar.
+
+- **GET /sales/customer/:email**
+  - Devuelve todas las ventas realizadas por un cliente específico según su email.
+  - Requiere autenticación.
+  - Parámetros:
+    - `email`: Email del cliente.
